@@ -24,13 +24,6 @@ class Users extends CI_Controller {
 		$this->load->view('users/show',$data);
 		$this->load->view('partials/footer',array('authors'=>$this->Author->get()));
 	}
-/*	public function edit($id)
-	{
-		$this->load->view('partials/header',array('title'=>'Edit User','h1'=>'Edit your user information'));
-		$this->load->view('users/edit');
-		$this->load->view('partials/footer');
-	}
-*/
 	// Logic Controllers
 	public function sign_in()
 	{

@@ -1,4 +1,10 @@
 <div class="row">
+	<div class="col-xs-12">
+		<h1
+		>Login/Registration</h1>
+	</div>
+</div>
+<div class="row">
 <?php if($this->session->flashdata('error')) { ?>
 	<div class="errors col-xs-12">
 		<?= $this->session->flashdata('error') ?>

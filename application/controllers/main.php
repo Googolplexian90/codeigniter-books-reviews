@@ -8,21 +8,19 @@ class Main extends CI_Controller {
 	}
 	public function index()
 	{
-		if($this->session->userdata('user')){
-			//Logged in, showing home page
-			$this->load->model('Book');
-			$this->load->model('Review');
-			$this->load->model('Author');
-			$data = array('reviews'=>$this->Review->get_recent(),'books'=>$this->Book->get())
-			$this->load->view('partials/header',array('title'=>'Home'));
-			$this->load->view('books/index',$data);
-			$this->load->view('partials/footer',array('authors'=>$this->Author->get()));
-		} else {
-			//Not logged in, loading sign-in screen
-			$this->load->view('partials/header',array('title'->'Books Reviewer &ndash; Welcome!'));
+		$this->load->view('partials/header',array('title'=>'Books Reviewer &ndash; Welcome!'));
+		$this->load->view('partials/splash');
+		$this->load->view('partials/footer');	
+	}
+	public function login(){
+			$this->load->view('partials/header',array('title'=>'Login/Registration'));
 			$this->load->view('users/login');
-			$this->load->view('partials/footer');
-		}
+			$this->load->view('partials/footer');	
+	}
+	public function guest(){
+		$data = array('id'=>0,'alias'=>'Guest');
+		$this->session->set_userdata('user',$data);
+		redirect('/books');
 	}
 }
 

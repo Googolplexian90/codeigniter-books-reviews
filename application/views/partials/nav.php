@@ -6,7 +6,8 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/users/<?= $this->session->userdata('user')['id'] ?>">Hello, <?= $this->session->userdata('user')['alias'] ?></a>
+			<a class="navbar-brand" 
+			<?php if($this->session->userdata('user')['id']>0) { echo 'href="/users/'.$this->session->userdata('user')['id'].'"';} ?>>Hello, <?= $this->session->userdata('user')['alias'] ?></a>
 		</div>
 		<div id="nav-menu" class="collapse navbar-collapse navbar-right">
 			<ul class="nav navbar-nav">

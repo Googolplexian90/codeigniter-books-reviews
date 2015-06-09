@@ -7,6 +7,8 @@ $route['404_override'] = '';
 $route['sign-in'] = "users/sign_in";
 $route['sign-up'] = "users/create";
 $route['sign-out'] = "users/sign_out";
+$route['guest'] = 'main/guest';
+$route['login'] = 'users/index';
 
 //Setting up some RESTful Routing
 $route['users/(:num)'] = "users/show/$1";
