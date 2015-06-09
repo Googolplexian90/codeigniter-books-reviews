@@ -1,0 +1,66 @@
+@font-face {
+  font-family: "foundation-icons";
+  src: url("/assets/fonts/foundation-icons.eot");
+  src: url("/assets/fonts/foundation-icons.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/foundation-icons.woff") format("woff"),
+       url("/assets/fonts/foundation-icons.ttf") format("truetype"),
+       url("/assets/fonts/foundation-icons.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.rating 
+{
+  font:normal normal normal 1.375em/1 "foundation-icons";
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+.rating:after
+{
+	color: #ccc;
+}
+.rating:before
+{
+	color: #E5E534;
+}
+.rating.one:before
+{
+	content: '\f1ee ';
+}
+.rating.one:after
+{
+	content: '\f1ee \f1ee \f1ee \f1ee ';
+}
+.rating.two:before
+{
+	content: '\f1ee \f1ee ';
+}
+.rating.two:after
+{
+	content: '\f1ee \f1ee \f1ee ';
+}
+.rating.three:before
+{
+	content: '\f1ee \f1ee \f1ee ';
+}
+.rating.three:after
+{
+	content: '\f1ee \f1ee ';
+}
+.rating.four:before
+{
+	content: '\f1ee \f1ee \f1ee \f1ee';
+}
+.rating.four:after
+{
+	content: '\f1ee ';
+}
+.rating.five:before
+{
+	content: '\f1ee \f1ee \f1ee \f1ee \f1ee ';
+}
+.rating.five:after
+{
+	content: '';
+}
