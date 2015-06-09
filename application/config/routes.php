@@ -1,12 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$route['default_controller'] = "users";
+$route['default_controller'] = "main";
 $route['404_override'] = '';
 
-//Yes, the routing file is stupid enough to need this declaration
-$route['users/sign-in'] = "users/sign_in";
+//Making our human-friendly urls work
+$route['sign-in'] = "users/sign_in";
+$route['sign-up'] = "users/create";
+$route['sign-out'] = "users/sign_out";
 
-//Setting up RESTful Routing
+//Setting up some RESTful Routing
 $route['users/(:num)'] = "users/show/$1";
 $route['books/(:num)'] = "books/show/$1";
 

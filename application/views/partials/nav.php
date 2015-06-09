@@ -13,7 +13,7 @@
 				<li><a href="/books">Home</a></li> 
 				<li><a data-toggle="modal" data-target="#new-book" href="#">Add Book and Review</a></li>
 				<li class="divider"></li>
-				<li><a href="/users/sign_out">Log out</a></li>
+				<li><a href="/sign-out">Log out</a></li>
 			</ul>
 		</div>
 	</nav>

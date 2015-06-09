@@ -5,7 +5,7 @@
 	</div>
 <?php } ?>
 	<div class="col-xs-12 col-sm-6">
-		<form action="/users/create" method="post">
+		<form action="/sign-up" method="post">
 			<h2>Sign-Up</h2>
 			<div class="form-group">
 				<label for="name">Name:</label><input type="text" name="name" class="form-control">
@@ -27,7 +27,7 @@
 		</form>
 	</div>
 	<div class="col-xs-12 col-sm-6">
-		<form action="/users/sign-in" method="post">
+		<form action="/sign-in" method="post">
 			<h2>Sign-In</h2>
 			<div class="form-group">
 				<label for="email">Email:</label><input type="email" name="email" class="form-control">

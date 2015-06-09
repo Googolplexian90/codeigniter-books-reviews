@@ -5,14 +5,24 @@ class Main extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->output->enable_profiler();
 	}
-
 	public function index()
 	{
-		$this->load->view('partials/header',array('title'=>'Home','h1'=>'Sign In'));
-
-		$this->load->view('partials/footer');
+		if($this->session->userdata('user')){
+			//Logged in, showing home page
+			$this->load->model('Book');
+			$this->load->model('Review');
+			$this->load->model('Author');
+			$data = array('reviews'=>$this->Review->get_recent(),'books'=>$this->Book->get())
+			$this->load->view('partials/header',array('title'=>'Home'));
+			$this->load->view('books/index',$data);
+			$this->load->view('partials/footer',array('authors'=>$this->Author->get()));
+		} else {
+			//Not logged in, loading sign-in screen
+			$this->load->view('partials/header',array('title'->'Books Reviewer &ndash; Welcome!'));
+			$this->load->view('users/login');
+			$this->load->view('partials/footer');
+		}
 	}
 }
 
