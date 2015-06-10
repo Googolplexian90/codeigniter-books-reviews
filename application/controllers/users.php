@@ -28,9 +28,9 @@ class Users extends CI_Controller {
 	public function sign_in()
 	{
 		$user = $this->User->validate_user($this->input->post(null,true));
-		if(empty($user)){
-			$this->session->set_flashdata('login_error','The email/password combination was not found.');
-			redirect('/');
+		if($user === false){
+			$this->session->set_flashdata('error',true);
+			redirect('/login');
 		}
 		else {
 			$this->session->set_userdata('user',array('id'=>$user->id,'alias'=>$user->alias));
@@ -46,8 +46,8 @@ class Users extends CI_Controller {
 			redirect('/books');
 		}
 		else {
-			$this->session->set_flashdata('errors',$user);
-			redirect('/');
+			$this->session->set_flashdata('errors',$user['errors']);
+			redirect('/login');
 		}
 	}
 	public function update(){}
